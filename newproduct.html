@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+</head>
+<body>
+   
+    <div id="product-details">
+        <img id="product-image" src="" alt="Product Image">
+        <h2 id="product-name"></h2>
+        <p id="product-price"></p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const productDetails = JSON.parse(localStorage.getItem('productDetails'));
+            if (productDetails) {
+                document.getElementById('product-image').src = productDetails.image;
+                document.getElementById('product-name').textContent = productDetails.name;
+                document.getElementById('product-price').textContent = productDetails.price;
+            } else {
+                // Handle if product details are not found
+            }
+        }
+    </script>
+
+</body>
+</html>
